@@ -7,18 +7,19 @@
 <style>
 .home {
   background-image: url("/dyMLb6C.gif");
-  background-color: #000000;
+  background-color: #c5c5c5;
   background-position: center;
   background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: center;
   min-height: 400px;
-  padding-top: 40px;
+  padding-top: 5px;
 }
 
 h1 {
   color: white;
-  font-size: 50pt;
+  font-family:Mansalva, Arial;
+  font-size: 60pt;
   text-shadow: black 0.1em 0.1em 0.2em;
 }
 </style>
