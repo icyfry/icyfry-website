@@ -1,12 +1,9 @@
 <template>
   <div id="app">
-    <br/>
-    <!--
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    -->
     <router-view/>
     <bottom :url="git"/>
   </div>
@@ -40,12 +37,15 @@ export default class App extends Vue {
 }
 
 #nav a {
-  font-weight: bold;
   color: #2c3e50;
 }
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+h2 {
+  font-weight: normal;
 }
 
 </style>

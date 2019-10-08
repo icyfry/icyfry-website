@@ -1,6 +1,6 @@
 <template>
     <div class="bottom">
-      <b>icyfry.io</b> - {{url}}
+      <span class="bottom-title">icyfry.io</span> - {{url}}
     </div>
 </template>
 
@@ -18,6 +18,10 @@ export default class Bottom extends Vue {
 .bottom {
   margin-top: 3px;
   font-size: 5pt;
+}
+
+.bottom-title {
+  color: #ff006a;
 }
 
 </style>
