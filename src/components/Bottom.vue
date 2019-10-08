@@ -1,6 +1,6 @@
 <template>
     <div class="bottom">
-      <span class="bottom-title">icyfry.io</span> - {{url}}
+      <span class="bottom-title">icyfry.io</span> - <a :href="url" target="_blank">{{url}}</a>
     </div>
 </template>
 
@@ -22,6 +22,11 @@ export default class Bottom extends Vue {
 
 .bottom-title {
   color: #ff006a;
+}
+
+.bottom-title a, a:visited, a:link{
+  color: #2c3e50;
+  text-decoration: none;
 }
 
 </style>
