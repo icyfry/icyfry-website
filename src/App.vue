@@ -5,18 +5,18 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
-    <bottom :url="git"/>
+    <Footer :url="git"/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import {Route} from 'vue-router';
-import Bottom from '@/components/Bottom.vue';
+import Footer from '@/components/Footer.vue';
 
 @Component({
   components: {
-    Bottom,
+    Footer,
   },
 })
 export default class App extends Vue {

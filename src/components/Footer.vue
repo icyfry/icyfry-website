@@ -1,6 +1,6 @@
 <template>
-    <div class="bottom">
-      <span class="bottom-title">icyfry.io</span> - <a :href="url" target="_blank">{{url}}</a>
+    <div class="footer">
+      <span class="footer-title">icyfry.io</span> - <a :href="url" target="_blank">{{url}}</a>
     </div>
 </template>
 
@@ -8,23 +8,23 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
-export default class Bottom extends Vue {
+export default class Footer extends Vue {
   @Prop() private url!: string;
 }
 </script>
 
 <style scoped>
 
-.bottom {
+.footer {
   margin-top: 3px;
   font-size: 5pt;
 }
 
-.bottom-title {
+.footer-title {
   color: #ff006a;
 }
 
-.bottom-title a, a:visited, a:link{
+.footer-title a, a:visited, a:link{
   color: #2c3e50;
   text-decoration: none;
 }
