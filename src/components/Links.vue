@@ -1,9 +1,9 @@
 <template>
   <div class="links">
-    <h1>{{ title }}</h1>
+    <h2>{{ title }}</h2>
     <ul>
-      <li><a href="http://github.icyfry.io" target="_blank" rel="noopener">github</a></li>
-      <li><a href="http://gitlab.icyfry.io" target="_blank" rel="noopener">gitlab</a></li>
+      <li><a href="http://github.icyfry.io" target="_blank">github.icyfry.io</a></li>
+      <li><a href="http://gitlab.icyfry.io" target="_blank">gitlab.icyfry.io</a></li>
     </ul>
   </div>
 </template>
