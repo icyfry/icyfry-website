@@ -1,6 +1,6 @@
 <template>
     <div class="bottom">
-      icyfry.io - 2019 ({{url}})
+      <b>icyfry.io</b> - {{url}}
     </div>
 </template>
 
