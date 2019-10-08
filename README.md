@@ -1,19 +1,18 @@
 # website icyfry.io
 
-source code of icyfry.io website, auto-deployed with [AWS Amplify](https://aws.amazon.com/fr/amplify/). 
+Source code of icyfry.io website, auto-deployed with [AWS Amplify](https://aws.amazon.com/fr/amplify/). 
 
 * [www.icyfry.io](https://www.icyfry.io/)
 * [dev.icyfry.io](https://dev.icyfry.io/) (*develop branch version*)
 
-## Commands
-```
-npm install
-```
+Technologies used
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+<img src="doc/vue.js.png" alt="aws" title="aws" height="50"/>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="doc/aws.png" alt="aws" title="aws" height="50"/>
+
+
+## Devs Commands
 
 ### Compiles and minifies for production
 ```
@@ -25,17 +24,7 @@ npm run build
 npm run test
 ```
 
-### Lints and fixes files
+### Compiles and hot-reloads for development
 ```
-npm run lint
-```
-
-### Run end-to-end tests
-```
-npm run test:e2e
-```
-
-### Run unit tests
-```
-npm run test:unit
+npm run serve
 ```
