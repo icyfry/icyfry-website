@@ -5,18 +5,18 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
-    <bottom :url="git"/>
+    <Footer :url="git"/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import {Route} from 'vue-router';
-import Bottom from '@/components/Bottom.vue';
+import Footer from '@/components/Footer.vue';
 
 @Component({
   components: {
-    Bottom,
+    Footer,
   },
 })
 export default class App extends Vue {
@@ -28,7 +28,7 @@ export default class App extends Vue {
 
 <style>
 #app {
-  font-family: 'Press Start 2P', Helvetica, Arial, sans-serif;
+  font-family: "Exo", Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
 }
@@ -42,10 +42,6 @@ export default class App extends Vue {
 
 #nav a.router-link-exact-active {
   color: #42b983;
-}
-
-h2 {
-  font-weight: normal;
 }
 
 </style>
