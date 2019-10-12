@@ -28,7 +28,7 @@ export default class App extends Vue {
 
 <style>
 #app {
-  font-family: 'Press Start 2P', Helvetica, Arial, sans-serif;
+  font-family: "Exo", Helvetica, Arial, sans-serif;
   text-align: center;
   color: #2c3e50;
 }
@@ -42,10 +42,6 @@ export default class App extends Vue {
 
 #nav a.router-link-exact-active {
   color: #42b983;
-}
-
-h2 {
-  font-weight: normal;
 }
 
 </style>

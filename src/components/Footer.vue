@@ -17,11 +17,11 @@ export default class Footer extends Vue {
 
 .footer {
   margin-top: 3px;
-  font-size: 5pt;
 }
 
 .footer-title {
   color: #ff006a;
+  font-weight: bold;
 }
 
 .footer-title a, a:visited, a:link{
