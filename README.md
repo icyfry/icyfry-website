@@ -7,9 +7,7 @@ Source code of icyfry.io website, auto-deployed with [AWS Amplify](https://aws.a
 
 Technologies used
 
-<img src="doc/vue.js.png" alt="aws" title="aws" height="50"/>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="doc/aws.png" alt="aws" title="aws" height="50"/>
+<img src="doc/vue.js.png" alt="aws" title="aws" height="50"/><img src="doc/aws.png" alt="aws" title="aws" height="50"/>
 
 
 ## Devs Commands
