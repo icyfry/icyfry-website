@@ -1,6 +1,11 @@
 <template>
     <div class="footer">
-      <span class="footer-title">icyfry.io</span> - <a :href="url" target="_blank">{{url}}</a>
+      <!--<span class="footer-title">icyfry.io</span>--><a :href="git" target="_blank">{{git}}</a>
+      <div class="footer-tech">
+        <a href="https://vuejs.org/" target="_blank"><img src="/vue.js.png" alt="vue.js" title="vue.js" height="20"/></a>
+        <a href="https://aws.amazon.com/" target="_blank"><img src="/aws.png" alt="aws" title="aws" height="20"/></a>
+        <a href="https://aws.amazon.com/fr/amplify/" target="_blank"><img src="/amplify.png" alt="aws - amplify" title="aws - amplify" height="20"/></a>
+      </div>
     </div>
 </template>
 
@@ -9,7 +14,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Footer extends Vue {
-  @Prop() private url!: string;
+  @Prop({default: 'https://github.com/icyfry/website'}) private git!: string;
 }
 </script>
 
@@ -20,13 +25,25 @@ export default class Footer extends Vue {
 }
 
 .footer-title {
-  color: #ff006a;
+  color: #000000;
   font-weight: bold;
 }
 
-.footer-title a, a:visited, a:link{
+.footer-title a, a:visited, a:link {
   color: #2c3e50;
   text-decoration: none;
+}
+
+.footer-title a, a:hover {
+  text-decoration: underline;
+}
+
+.footer-tech {
+  margin: 20px;
+}
+
+.footer-tech a {
+  margin: 7px;
 }
 
 </style>
