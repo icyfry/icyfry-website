@@ -2,8 +2,9 @@
   <div class="links">
     <h2>{{ title }}</h2>
     <ul>
-      <li><a href="http://github.icyfry.io" target="_blank">github.icyfry.io</a></li>
-      <li><a href="http://dev.icyfry.io" target="_blank">dev.icyfry.io</a></li>
+      <li><a href="http://icyfry.io/github" target="_blank">icyfry.io/github</a></li>
+      <li><a href="http://icyfry.io/gitlab" target="_blank">icyfry.io/gitlab</a></li>
+      <li><a href="http://icyfry.io/bitbuket" target="_blank">icyfry.io/bitbuket</a></li>
     </ul>
     <br/>
   </div>
@@ -33,7 +34,4 @@ li {
   margin: 0 10px;
 }
 
-a {
-  color: #42b983;
-}
 </style>
