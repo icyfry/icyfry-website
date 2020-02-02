@@ -14,7 +14,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Footer extends Vue {
-  @Prop({default: 'https://github.com/icyfry/website'}) private git!: string;
+  @Prop({default: 'https://github.com/icyfry/icyfry-website'}) private git!: string;
 }
 </script>
 
