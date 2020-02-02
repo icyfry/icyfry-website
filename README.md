@@ -1,6 +1,6 @@
 # website icyfry.io
 
-Source code of icyfry.io website, auto-deployed with [AWS Amplify](https://aws.amazon.com/fr/amplify/). 
+<b>Source code of icyfry.io website, auto-deployed with [AWS Amplify](https://aws.amazon.com/fr/amplify/).</b>
 
 * [www.icyfry.io](https://www.icyfry.io/)
 * [dev.icyfry.io](https://dev.icyfry.io/) (*develop branch version*)
@@ -18,6 +18,11 @@ Source code of icyfry.io website, auto-deployed with [AWS Amplify](https://aws.a
 fry favicon by [rich-d](http://www.softicons.com/designers/rich-d) 
 
 ## Devs Commands
+
+### Setup
+```
+npm install -g @vue/cli @vue/cli-service-global
+```
 
 ### Compiles and minifies for production
 ```
