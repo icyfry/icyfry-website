@@ -11,8 +11,6 @@
 
 <a href="https://aws.amazon.com/" target="_blank"><img src="doc/aws.png" alt="aws" title="aws" height="45"/></a>
 
-<a href="https://aws.amazon.com/fr/amplify/" target="_blank"><img src="doc/amplify.png" alt="aws - amplify" title="aws - amplify" height="45"/></a>
-
 ## Resources
 
 fry favicon by [rich-d](http://www.softicons.com/designers/rich-d) 
