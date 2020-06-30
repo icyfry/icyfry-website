@@ -6,7 +6,7 @@ on:
       - develop
 
 jobs:
-  firebase-deploy:
+  s3-deploy:
     runs-on: ubuntu-latest
     steps:
     
@@ -22,7 +22,7 @@ jobs:
 
     - name: Installing project dependencies
       run: |
-        npm install -g @vue/cli
+        npm install @vue/cli
         npm install
 
     - name: Building the project
