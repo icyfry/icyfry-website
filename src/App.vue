@@ -31,14 +31,14 @@ export default class App extends Vue {
 
 <style>
 #app {
-  font-family: "Exo", Helvetica, Arial, sans-serif;
+  font-family: Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
   text-align: center;
-  color: #2c3e50;
+  color: #363636;
   margin-top: 120px;
 }
 
 #app a, a:visited, a:link {
-  color: #2c3e50;
+  color: #363636;
   text-decoration: none;
 }
 
@@ -47,7 +47,7 @@ export default class App extends Vue {
 }
 
 #nav a {
-  color: #2c3e50;
+  color: #363636;
   font-weight: bold;
 }
 
