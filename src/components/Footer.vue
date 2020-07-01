@@ -15,10 +15,9 @@ import gitInfo from '../git-info.json';
 @Component
 export default class Footer extends Vue {
   @Prop({default: 'https://github.com/icyfry/icyfry-website'}) private repo!: string;
-  @Prop() private git!: string;
 
-  public created() {
-    this.git = gitInfo.abbreviatedSha + ' - ' + gitInfo.branch;
+  get git() {
+    return gitInfo.abbreviatedSha + ' - ' + gitInfo.branch;
   }
 
 }
