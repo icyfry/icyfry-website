@@ -24,7 +24,7 @@ npm install -g @vue/cli @vue/cli-service-global
 
 ### Compiles and minifies for production
 ```
-npm run build
+npm run build-prod
 ```
 
 ### Run tests

@@ -45,7 +45,7 @@ export default class App extends Vue {
     this.configCatClient = configcat.createClientWithAutoPoll(
       process.env.VUE_APP_CONFIG_CAT_SDK_KEY,
       {
-        pollIntervalSeconds: 2,
+        pollIntervalSeconds: process.env.VUE_APP_CONFIG_CAT_POLL_INTERVAL_SECONDS,
         logger,
         configChanged: this.configCatConfigurationChanged,
       },
