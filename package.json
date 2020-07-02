@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "configcat-js": "^4.0.2",
-    "git-repo-info": "^2.1.1",
     "mem": ">=4.0.0",
     "serialize-javascript": ">=2.1.1",
     "vue": "^2.6.11",
@@ -22,6 +21,7 @@
     "vue-router": "^3.3.4"
   },
   "devDependencies": {
+    "git-repo-info": "^2.1.1",
     "@types/jest": "^23.1.4",
     "@vue/cli-plugin-e2e-cypress": "^3.12.1",
     "@vue/cli-plugin-typescript": "^4.4.6",
