@@ -1,14 +1,20 @@
 <template>
   <div class="home">
     <h1>icyfry.io</h1>
-  </div>
+    <h2 v-if="showGitInformation">Git Informations shown on website<br/><br/></h2>
+  </div> 
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { IConfigCatClient } from 'configcat-common/lib/ConfigCatClient';
+import App from '../App.vue';
 
 @Component
 export default class Home extends Vue {
+
+  @Prop() private showGitInformation!: boolean;
+
 }
 </script>
 

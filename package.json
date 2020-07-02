@@ -4,13 +4,15 @@
   "private": true,
   "scripts": {
     "grab-git": "node grab-git-info.js",
-    "serve": "vue-cli-service serve --resolveJsonModule",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve",
+    "build-staging" : "vue-cli-service build --mode staging",
+    "build-prod": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "configcat-js": "^4.0.2",
     "git-repo-info": "^2.1.1",
     "mem": ">=4.0.0",
     "serialize-javascript": ">=2.1.1",
