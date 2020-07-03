@@ -1,6 +1,6 @@
 # website icyfry.io
 
-<b>Source code of icyfry.io website, auto-deployed with [AWS Amplify](https://aws.amazon.com/fr/amplify/).</b>
+<b>Source code of icyfry.io website</b>
 
 * [www.icyfry.io](https://www.icyfry.io/)
 * [dev.icyfry.io](https://dev.icyfry.io/) (*develop branch version*)
@@ -24,7 +24,7 @@ npm install -g @vue/cli @vue/cli-service-global
 
 ### Compiles and minifies for production
 ```
-npm run build
+npm run build-prod
 ```
 
 ### Run tests
