@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "grab-git": "node grab-git-info.js",
     "serve": "vue-cli-service serve",
-    "build-staging": "vue-cli-service build --mode staging",
-    "build-prod": "vue-cli-service build",
+    "build-staging": "node grab-git-info.js && vue-cli-service build --mode staging",
+    "build-prod": "node grab-git-info.js && vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
@@ -21,13 +20,14 @@
     "vue-router": "^3.3.4"
   },
   "devDependencies": {
-    "git-repo-info": "^2.1.1",
     "@types/jest": "^23.1.4",
+    "@vue/cli": "^4.4.6",
     "@vue/cli-plugin-e2e-cypress": "^3.12.1",
     "@vue/cli-plugin-typescript": "^4.4.6",
     "@vue/cli-plugin-unit-jest": "^4.4.6",
     "@vue/cli-service": "^4.4.6",
     "@vue/test-utils": "1.0.0-beta.29",
+    "git-repo-info": "^2.1.1",
     "ts-jest": "^23.0.0",
     "typescript": "^3.9.5",
     "vue-template-compiler": "^2.6.11"

@@ -1,4 +1,4 @@
-name: Deploy staging version
+name: Build and deploy staging version
 
 on:
   push:
@@ -26,9 +26,7 @@ jobs:
         npm install
 
     - name: Building the project
-      run: |
-        npm run grab-git
-        npm run build-staging
+      run: npm run build-staging
         
     - name: Deploy static site to S3 bucket
       run: aws s3 sync ./dist/ s3://icyfry-website/staging --delete
