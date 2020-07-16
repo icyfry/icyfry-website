@@ -21,12 +21,10 @@ jobs:
         aws-region: eu-west-1
 
     - name: Installing project dependencies
-      run: |
-        npm install @vue/cli
-        npm install
+      run: npm install
 
     - name: Building the project
-      run: npm run build-staging
+      run: npm run build:staging
         
     - name: Deploy static site to S3 bucket
       run: aws s3 sync ./dist/ s3://icyfry-website/staging --delete
