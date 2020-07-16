@@ -1,5 +1,8 @@
 # website icyfry.io
 
+[![CircleCI](https://circleci.com/gh/icyfry/icyfry-website/tree/master.svg?style=svg)](https://circleci.com/gh/icyfry/icyfry-website)
+![Licence](https://img.shields.io/github/license/icyfry/icyfry-website)
+
 <b>Source code of icyfry.io website</b>
 
 * [www.icyfry.io](https://www.icyfry.io/)
@@ -18,21 +21,27 @@ fry favicon by [rich-d](http://www.softicons.com/designers/rich-d)
 ## Devs Commands
 
 ### Setup
-```
+
+```shell
 npm install -g @vue/cli @vue/cli-service-global
 ```
 
 ### Compiles and minifies for production
-```
-npm run build-prod
+
+```shell
+npm run build:prod
+npm run build:staging
 ```
 
 ### Run tests
-```
-npm run test
+
+```shell
+npm run test:unit
+npm run test:e2e
 ```
 
 ### Compiles and hot-reloads for development
-```
+
+```shell
 npm run serve
 ```
