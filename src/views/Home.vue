@@ -1,12 +1,12 @@
 <template>
-  <div class="home">
+  <div v-bind:class="[noColor ? 'home home-no-color' : 'home']">
     <h1>icyfry.io</h1>
     <h2 v-if="showGitInformation">Git Informations shown on website<br/><br/></h2>
   </div> 
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { IConfigCatClient } from 'configcat-common/lib/ConfigCatClient';
 import App from '../App.vue';
 
@@ -14,6 +14,7 @@ import App from '../App.vue';
 export default class Home extends Vue {
 
   @Prop() private showGitInformation!: boolean;
+  @Prop() private noColor!: boolean;
 
 }
 </script>
@@ -31,6 +32,15 @@ export default class Home extends Vue {
   background: linear-gradient(-45deg, #7FDBFF, #3D9970, #FF851B, #FFDC00);
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
+}
+
+.home-no-color {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: center;
+  background: linear-gradient(-45deg, #949494, #363636, #c5c5c5, #6b6b6b);
+  background-size: 400% 400%;
 }
 
 .home a, a:visited, a:link {

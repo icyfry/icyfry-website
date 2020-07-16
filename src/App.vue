@@ -6,7 +6,7 @@
       <router-link to="/about">About</router-link>
     </div>
     -->
-    <router-view :showGitInformation="showGitInformation"/>
+    <router-view :showGitInformation="showGitInformation" :noColor="noColor"/>
     <!--
     <Links title="Links"/>
     -->
@@ -34,7 +34,9 @@ export default class App extends Vue {
 
   public configCatClient!: IConfigCatClient;
 
+  // features flags
   public showGitInformation: boolean = false;
+  public noColor: boolean = false;
 
   constructor() {
     super();
@@ -51,23 +53,27 @@ export default class App extends Vue {
         configChanged: this.configCatConfigurationChanged,
       },
     );
-    this.readShowGitInformation();
+    this.readFlags();
   }
 
-  private readShowGitInformation() {
-
-    const user: User = new User((this.$route.query.id) as string);
-    user.custom = { group: (this.$route.query.group) as string};
-
-    this.configCatClient.getValueAsync('show_git_infos', false, user)
-      .then( (value) => {
+  private readFlags() {
+    this.readFlag('show_git_infos').then( (value) => {
         this.showGitInformation = value;
     });
+    this.readFlag('no_color').then( (value) => {
+        this.noColor = value;
+    });
+  }
+
+  private readFlag(flag: string): Promise<boolean> {
+    const user: User = new User((localStorage.id) as string);
+    user.custom = { group: (localStorage.group) as string};
+    return this.configCatClient.getValueAsync(flag, false, user);
   }
 
   @Emit('configcat-configuration-changed')
   private configCatConfigurationChanged() {
-    this.readShowGitInformation();
+    this.readFlags();
     return this.configCatClient;
   }
 
