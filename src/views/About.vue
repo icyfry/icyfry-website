@@ -1,17 +1,18 @@
 <template>
   <div class="about">
-    <Links title="Links"/>
+    <Links title="Links" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import Links from '@/components/Links.vue';
+import { defineComponent } from "vue";
+import Links from "@/components/Links.vue";
 
-@Component({
+export default defineComponent({
+  name: "App",
+
   components: {
     Links,
   },
-})
-export default class About extends Vue {}
+});
 </script>

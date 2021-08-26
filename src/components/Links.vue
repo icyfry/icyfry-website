@@ -2,21 +2,34 @@
   <div class="links">
     <h2>{{ title }}</h2>
     <ul>
-      <li><a href="http://icyfry.io/github" target="_blank">icyfry.io/github</a></li>
-      <li><a href="http://icyfry.io/gitlab" target="_blank">icyfry.io/gitlab</a></li>
-      <li><a href="http://icyfry.io/bitbuket" target="_blank">icyfry.io/bitbuket</a></li>
+      <li>
+        <a href="http://icyfry.io/github" target="_blank">icyfry.io/github</a>
+      </li>
+      <li>
+        <a href="http://icyfry.io/gitlab" target="_blank">icyfry.io/gitlab</a>
+      </li>
+      <li>
+        <a href="http://icyfry.io/bitbuket" target="_blank"
+          >icyfry.io/bitbuket</a
+        >
+      </li>
     </ul>
-    <br/>
+    <br />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { defineComponent } from "vue";
 
-@Component
-export default class Links extends Vue {
-  @Prop() private title!: string;
-}
+export default defineComponent({
+  name: "Links",
+  data() {
+    return {
+      title: "" as string,
+    };
+  },
+  methods: {},
+});
 </script>
 
 <style scoped>
@@ -33,5 +46,4 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-
 </style>

@@ -6,89 +6,92 @@
       <router-link to="/about">About</router-link>
     </div>
     -->
-    <router-view :showGitInformation="showGitInformation" :noColor="noColor"/>
+    <router-view :showGitInformation="showGitInformation" :noColor="noColor" />
     <!--
     <Links title="Links"/>
     -->
-    <Footer :showGitInformation="showGitInformation"/>
+    <Footer :showGitInformation="showGitInformation" />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Emit } from 'vue-property-decorator';
-import { Route } from 'vue-router';
-import Footer from '@/components/Footer.vue';
-import Links from '@/components/Links.vue';
-import * as configcat from 'configcat-js';
-import { IConfigCatClient } from 'configcat-common/lib/ConfigCatClient';
-import { LogLevel } from 'configcat-common';
-import { User } from 'configcat-common/lib/RolloutEvaluator';
+import { defineComponent } from "vue";
+import Footer from "@/components/Footer.vue";
+import * as configcat from "configcat-js";
+import { IConfigCatClient } from "configcat-common/lib/ConfigCatClient";
+import { LogLevel } from "configcat-common";
+import { User } from "configcat-common/lib/RolloutEvaluator";
 
+export default defineComponent({
+  name: "App",
 
-@Component({
   components: {
-    Footer, Links,
+    Footer,
   },
-})
-export default class App extends Vue {
 
-  public configCatClient!: IConfigCatClient;
+  data() {
+    return {
+      configCatClient: null as unknown as IConfigCatClient,
+      // features flags
+      showGitInformation: false,
+      noColor: false,
+    };
+  },
 
-  // features flags
-  public showGitInformation: boolean = false;
-  public noColor: boolean = false;
+  methods: {
+    initializeConfigCat() {
+      const logger = configcat.createConsoleLogger(LogLevel.Info);
+      this.configCatClient = configcat.createClientWithAutoPoll(
+        process.env.VUE_APP_CONFIG_CAT_SDK_KEY,
+        {
+          pollIntervalSeconds:
+            process.env.VUE_APP_CONFIG_CAT_POLL_INTERVAL_SECONDS,
+          logger,
+          configChanged: this.configCatConfigurationChanged,
+        }
+      );
+      this.readFlags();
+    },
 
-  constructor() {
-    super();
-    this.initializeConfigCat();
-  }
-
-  private initializeConfigCat() {
-    const logger = configcat.createConsoleLogger(LogLevel.Info);
-    this.configCatClient = configcat.createClientWithAutoPoll(
-      process.env.VUE_APP_CONFIG_CAT_SDK_KEY,
-      {
-        pollIntervalSeconds: process.env.VUE_APP_CONFIG_CAT_POLL_INTERVAL_SECONDS,
-        logger,
-        configChanged: this.configCatConfigurationChanged,
-      },
-    );
-    this.readFlags();
-  }
-
-  private readFlags() {
-    this.readFlag('show_git_infos').then( (value) => {
+    readFlags() {
+      this.readFlag("show_git_infos").then((value) => {
         this.showGitInformation = value;
-    });
-    this.readFlag('no_color').then( (value) => {
+      });
+      this.readFlag("no_color").then((value) => {
         this.noColor = value;
-    });
-  }
+      });
+    },
 
-  private readFlag(flag: string): Promise<boolean> {
-    const user: User = new User((localStorage.id) as string);
-    user.custom = { group: (localStorage.group) as string};
-    return this.configCatClient.getValueAsync(flag, false, user);
-  }
+    readFlag(flag: string): Promise<boolean> {
+      const user: User = new User(localStorage.id as string);
+      user.custom = { group: localStorage.group as string };
+      return this.configCatClient.getValueAsync(flag, false, user);
+    },
 
-  @Emit('configcat-configuration-changed')
-  private configCatConfigurationChanged() {
-    this.readFlags();
-    return this.configCatClient;
-  }
+    configCatConfigurationChanged() {
+      this.readFlags();
+      return this.configCatClient;
+    },
+  },
 
-}
+  mounted() {
+    this.initializeConfigCat();
+  },
+});
 </script>
 
 <style>
 #app {
-  font-family: Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+  font-family: Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue,
+    sans-serif;
   text-align: center;
   color: #363636;
   margin-top: 120px;
 }
 
-#app a, a:visited, a:link {
+#app a,
+a:visited,
+a:link {
   color: #363636;
   text-decoration: none;
 }
@@ -105,7 +108,4 @@ export default class App extends Vue {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-
-
-
 </style>
