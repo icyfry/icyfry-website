@@ -54,12 +54,14 @@ export default defineComponent({
     },
 
     readFlags() {
+      /*
       this.readFlag("show_git_infos").then((value) => {
         this.showGitInformation = value;
       });
       this.readFlag("no_color").then((value) => {
         this.noColor = value;
       });
+      */
     },
 
     readFlag(flag: string): Promise<boolean> {
