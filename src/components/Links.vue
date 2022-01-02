@@ -3,15 +3,7 @@
     <h2>{{ title }}</h2>
     <ul>
       <li>
-        <a href="http://icyfry.io/github" target="_blank">icyfry.io/github</a>
-      </li>
-      <li>
-        <a href="http://icyfry.io/gitlab" target="_blank">icyfry.io/gitlab</a>
-      </li>
-      <li>
-        <a href="http://icyfry.io/bitbuket" target="_blank"
-          >icyfry.io/bitbuket</a
-        >
+        <a href="https://github.com/icyfry" target="_blank">https://github.com/icyfry</a>
       </li>
     </ul>
     <br />

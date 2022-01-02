@@ -1,6 +1,6 @@
 <template>
   <div v-bind:class="[noColor ? 'home home-no-color' : 'home']">
-    <h1>icyfry.io</h1>
+    <h1>icyfry.bzh</h1>
     <h2 v-if="showGitInformation">
       Git Informations shown on website<br /><br />
     </h2>
