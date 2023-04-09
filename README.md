@@ -1,29 +1,14 @@
-# icyfry-website
+# Icyfry Website
 
-## Project setup
-```
-npm install
-```
+[![Build and deploy](https://github.com/icyfry/icyfry-website/actions/workflows/deploy-prod.yml/badge.svg?branch=main)](https://github.com/icyfry/icyfry-website/actions/workflows/deploy-prod.yml)
+<img src="https://img.shields.io/github/languages/top/icyfry/icyfry-website" />
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Source code of [icyfry.bzh](https://icyfry.bzh/)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Tools used
 
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* <img src="doc/vue.png" width="25px"/> [vue.js](https://fr.vuejs.org/index.html)
+* <img src="doc/vite.png" width="25px"/> [vitejs](https://vitejs.dev/)
+* [taskfile.dev](https://taskfile.dev/#/installation)
+* [act](https://github.com/nektos/act)
+* <img src="doc/aws.png" width="25px"/> [aws](https://aws.amazon.com/)
