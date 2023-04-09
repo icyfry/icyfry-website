@@ -14,8 +14,8 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "types": [
-      "webpack-env",
-      "jest"
+      "jest",
+      "node"
     ],
     "paths": {
       "@/*": [
@@ -30,6 +30,8 @@
     ]
   },
   "include": [
+    "*.ts",
+    "*.js",
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
