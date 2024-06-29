@@ -20,11 +20,17 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-west-1
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: latest
+        run_install: false
+
     - name: Installing project dependencies
-      run: npm install
+      run: pnpm install
 
     - name: Building the project
-      run: npm run build:staging
+      run: pnpm run build:staging
         
     - name: Deploy static site to S3 bucket
       run: aws s3 sync ./dist/ s3://icyfry-website/staging --delete

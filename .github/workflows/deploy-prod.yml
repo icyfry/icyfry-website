@@ -20,12 +20,18 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: eu-west-1
+        
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: latest
+        run_install: false
 
     - name: Installing project dependencies
-      run: npm install
+      run: pnpm install
 
     - name: Building the project
-      run: npm run build:prod
+      run: pnpm run build:prod
         
     - name: Deploy static site to S3 bucket
       run: aws s3 sync ./dist/ ${{ secrets.AWS_S3 }} --delete
