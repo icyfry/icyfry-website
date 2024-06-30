@@ -7,8 +7,6 @@ Source code of [icyfry.bzh](https://icyfry.bzh/)
 
 ## Tools used
 
-* <img src="doc/vue.png" width="25px"/> [vue.js](https://fr.vuejs.org/index.html)
-* <img src="doc/vite.png" width="25px"/> [vitejs](https://vitejs.dev/)
-* [taskfile.dev](https://taskfile.dev/#/installation)
-* [act](https://github.com/nektos/act)
-* <img src="doc/aws.png" width="25px"/> [aws](https://aws.amazon.com/)
+* [Vue.js](https://fr.vuejs.org/index.html)
+* [Vitejs](https://vitejs.dev/)
+* [AWS](https://aws.amazon.com/)

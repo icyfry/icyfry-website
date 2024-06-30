@@ -3,8 +3,8 @@ node_modules
 /dist
 /back
 /src/git-info.json
-/resume/resume-full.*
-/resume/picture
+/resume
+/public/*.svg
 
 # local env files
 .env.local
