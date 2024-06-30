@@ -7,8 +7,8 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint --fix src",
-    "build:staging": "node grab-git-info.js && vue-tsc --noEmit && vite build --mode staging",
-    "build:prod": "node grab-git-info.js && vue-tsc --noEmit && vite build"
+    "build:staging": "vue-tsc --noEmit && vite build --mode staging",
+    "build:prod": "vue-tsc --noEmit && vite build"
   },
   "dependencies": {
     "axios": "^1.7.2",
