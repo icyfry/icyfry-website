@@ -1,28 +1,22 @@
 <template>
   <div v-bind:class="'home-head'">
     <h1>icyfry.bzh</h1>
-    <h2 v-if="showGitInformation">
-      Git Informations shown on website
-    </h2>
     <ul>
       <li>
       <a href="https://github.com/icyfry">
-        <img src="https://img.shields.io/badge/Github-icyfry-white?style=for-the-badge&logo=github" />
+        <img alt="github" src="https://img.shields.io/badge/Github-icyfry-white?style=for-the-badge&logo=github" />
       </a>
       </li>
-      <!--
-      <li>
-      <a href="https://www.icyfry.io/">
-        <img src="https://img.shields.io/badge/icyfry.io-white?style=for-the-badge" />
-      </a>
-      </li>
-      -->
       <li>
         <a href="https://www.linkedin.com/in/jonathan-le-brun/">
-        <img src="https://img.shields.io/badge/-linkedin-blue?style=for-the-badge&logo=linkedin">
+        <img alt="linkedin" src="https://img.shields.io/badge/linkedin-jonathan le brun-blue?style=for-the-badge&logo=linkedin">
       </a>
       </li>
-  </ul>
+      <li>
+      <a href="https://www.malt.fr/profile/jonathanlebrun">
+        <img alt="malt" src="https://img.shields.io/badge/malt-jonathan le brun-FC5757?style=for-the-badge&logo=malt"></a>
+      </li>
+    </ul>
   </div>
   <MyResume />
 </template>
@@ -32,10 +26,8 @@ import { defineComponent } from 'vue'
 import MyResume from '@/components/MyResume.vue'
 export default defineComponent({
   name: 'HomeView',
-  data (): {showGitInformation: boolean} {
-    return {
-      showGitInformation: false
-    }
+  data () {
+    return {}
   },
   components: {
     MyResume
