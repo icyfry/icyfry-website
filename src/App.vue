@@ -3,17 +3,13 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/me">Resume</router-link>
     </div>
-    <router-view :showGitInformation="showGitInformation" />
-    <AppFooter :showGitInformation="showGitInformation" />
+    <router-view />
+    <AppFooter />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import AppFooter from '@/components/AppFooter.vue'
-// import * as configcat from "configcat-js";
-// import { IConfigCatClient } from "configcat-common/lib/ConfigCatClient";
-// import { LogLevel } from "configcat-common";
-// import { User } from "configcat-common/lib/RolloutEvaluator";
 
 export default defineComponent({
   name: 'App',
@@ -23,52 +19,15 @@ export default defineComponent({
   },
 
   data () {
-    return {
-      // configCatClient: null as unknown as IConfigCatClient,
-      // features flags
-      showGitInformation: false
-    }
+    return {}
   },
 
   methods: {
-    /*
-    initializeConfigCat() {
-      const logger = configcat.createConsoleLogger(LogLevel.Info);
-      this.configCatClient = configcat.createClientWithAutoPoll(
-        process.env.VUE_APP_CONFIG_CAT_SDK_KEY as string,
-        {
-          pollIntervalSeconds:
-            +(process.env.VUE_APP_CONFIG_CAT_POLL_INTERVAL_SECONDS as string) as number,
-          logger,
-          configChanged: this.configCatConfigurationChanged,
-        }
-      );
-      this.readFlags();
-    },
-    readFlags() {
-
-      this.readFlag("show_git_infos").then((value) => {
-        this.showGitInformation = value;
-      })
-    },
-    readFlag(flag: string): Promise<boolean> {
-
-      const user: User = new User(localStorage.id as string);
-      user.custom = { group: localStorage.group as string };
-      return this.configCatClient.getValueAsync(flag, false, user);
-
-    },
-    configCatConfigurationChanged() {
-      this.readFlags();
-      return this.configCatClient;
-    },
-    */
   },
 
   mounted () {
-    // DISABLED
-    // this.initializeConfigCat();
   }
+
 })
 </script>
 
