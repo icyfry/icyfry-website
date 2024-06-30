@@ -18,7 +18,6 @@
       </li>
     </ul>
   </div>
-  <MyResume />
 </template>
 
 <script lang="ts">
