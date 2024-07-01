@@ -1,8 +1,8 @@
 <template>
+  <div class="resume-header">
+    <button @click="downloadPDF" class="pdf-button">📄 PDF</button>
+  </div>
   <div id="resume">
-    <p class="resume-header">
-      <button @click="downloadPDF" class="pdf-button">PDF</button>
-    </p>
     <header class="header">
       <div class="profile">
         <img :src="personalInfo.photo" alt="profil" class="profile-photo">
@@ -285,7 +285,7 @@ export default defineComponent({
         margin:       1,
         filename:     'resume.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
+        html2canvas:  { scale: 2, windowWidth: 700 },
         jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
       };
       html2pdf().set(opt).from(element).save();
@@ -318,6 +318,12 @@ header {
   width: 50%;
   margin: auto;
   margin-bottom: 15px;
+}
+
+@media (max-width: 700px) {
+  .half {
+    width: 100%;
+  }
 }
 
 .half p {
@@ -362,6 +368,7 @@ h1, h2 {
 h2 {
   border-bottom: 1px solid black;
   width: 100%;
+  page-break-before: always;
 }
 
 h3 {
@@ -401,19 +408,20 @@ ul li {
 
 .resume-header {
   text-align: right;
-  margin-top: 0px;
-  padding-top: 0;
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 900px;
 }
 
 .pdf-button {
   border: none;
   border-radius: 20px;
-  padding: 4px 10px 10px;
+  padding: 8px;
   background-color: #B0B0B0;
   color: white;
   cursor: pointer;
-  height: 20px;
-  font-size: 11px;
+  font-size: 0.8em;
 }
 
 .pdf-button:hover {
