@@ -1,6 +1,8 @@
 <template>
   <div class="resume-header">
-    <button @click="downloadPDF" class="pdf-button">📄 PDF</button>
+    <button @click="changeLanguage('en')" class="button">English</button>
+    <button @click="changeLanguage('fr')" class="button">Français</button>
+    <button @click="downloadPDF" class="button">📄 PDF</button>
   </div>
   <div id="resume">
     <header class="header">
@@ -26,17 +28,13 @@
     </header>
 
     <section>
-      <P>
-        12 years of experience - I support technical teams in the design and operational delivery
-        of web projects seamlessly integrated into IT systems. I also bring expertise to drive these
-        projects within complex programs. I have experience working as an architect and techlead across various industries, 
-        including manufacturing, retail, and the luxury sector. I'man Agile enthusiast, focus on modern digital architectures. 
-        My approach involves designing systems and innovative solutions that empower teams to execute their strategies effectively.
-      </P>
+      <p>
+        {{ description }}
+      </p>
     </section>
 
     <section>
-      <h2>Skills</h2>
+      <h2>{{ titles.skills }}</h2>
       <ul>
         <li v-for="skill in skills">
           <h3>{{ skill.name }}</h3>
@@ -48,9 +46,9 @@
         </li>
       </ul>
     </section>
-    
+
     <section>
-      <h2>Work Experience</h2>
+      <h2>{{ titles.experiences }}</h2>
       <ul>
         <li v-for="experience in experiences" :key="experience.id">
           <h3>{{ experience.position }} - {{ experience.company }}</h3>
@@ -61,9 +59,9 @@
     </section>
 
     <section>
-      <h2>Projects</h2>
+      <h2>{{ titles.projects }}</h2>
       <ul>
-        <li class="half" v-for="project in projects" :key="project.id">
+        <li class="project" v-for="project in projects" :key="project.id">
           <h3>{{ project.title }} - {{ project.company }}</h3>
           <ul class="highlights">
             <li v-for="highlight in project.highlights">
@@ -80,7 +78,7 @@
     </section>
 
     <section>
-      <h2>Education</h2>
+      <h2>{{ titles.education }}</h2>
       <ul>
         <li v-for="education in educations" :key="education.id">
           <h3>{{ education.degree }} - {{ education.institution }}</h3>
@@ -90,212 +88,179 @@
     </section>
 
     <section>
-      <h2>Languages</h2>
+      <h2>{{ titles.languages }}</h2>
       <ul>
         <li><b>French</b>, Native speaker</li>
         <li><b>English</b>, Fluent speaker</li>
       </ul>
     </section>
-    
+
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
 import html2pdf from 'html2pdf.js';
+import { useI18n } from 'vue-i18n';
 
 export default defineComponent({
   name: 'MyResume',
-  data () {
-    return {
-      personalInfo: {
-        photo: 'portrait-jle-2.png',
-        name: 'Jonathan Le Brun',
-        title: 'Freelance Digital Web / Web3 Architect',
-        contact: {
-          localisation: 'Nantes, France',
-        },
-        social: {
-          linkedin: 'https://www.linkedin.com/in/jonathan-le-brun/',
-          malt: 'https://www.malt.fr/profile/jonathanlebrun',
-          github: 'https://github.com/icyfry'
-        }
+  mounted() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang');
+    if (lang) {
+      this.changeLanguage(lang);
+    }
+  },
+  setup() {
+    const { t, te, locale } = useI18n();
+
+    const changeLanguage = (language: string) => {
+      locale.value = language // Changez la langue ici
+      console.log('Language changed to', language)
+    }
+
+    const titles = computed(() => ({
+      skills: t(`resume.titles.skills`),
+      experiences: t(`resume.titles.experiences`),
+      projects: t(`resume.titles.projects`),
+      education: t(`resume.titles.education`),
+      languages: t(`resume.titles.languages`)
+    }));
+
+    const personalInfo = computed(() => ({
+      photo: 'portrait-jle-2.png',
+      name: 'Jonathan Le Brun',
+      title: t('resume.personalInfo.title'),
+      contact: {
+        localisation: 'Nantes, France',
       },
-      experiences: [
-        {
-          id: 1,
-          position: 'Digital & Web3 Architect',
-          company: 'Freelance',
-          period: 'January 2024 - Now',
-          description: 'I support technical teams in the design and operational delivery of web projects'
-        },
-        {
-          id: 2,
-          position: 'Consultant / Enterprise Architect',
-          company: 'Capgemini',
-          period: 'September 2015 - January 2024',
-          description: 'I work to align architectural strategies with business objectives. As an agile architect, I also guide delivery teams in achieving these goals'
-        },
-        {
-          id: 3,
-          position: 'Consultant / Technical Lead',
-          company: 'Viveris',
-          period: 'November 2010 - November 2014',
-          description: 'In a IT service company of 750 employees, I acted as technical lead on various projects'
+      social: {
+        linkedin: 'https://www.linkedin.com/in/jonathan-le-brun/',
+        malt: 'https://www.malt.fr/profile/jonathanlebrun',
+        github: 'https://github.com/icyfry'
+      }
+    }));
+
+    const experiences = computed(() => {
+      const experiencesCount = 3;
+      const experiencesArray = [];
+      for (let i = 0; i < experiencesCount; i++) {
+        experiencesArray.push({
+          id: i + 1,
+          position: t(`resume.experiences.${i}.position`),
+          company: t(`resume.experiences.${i}.company`),
+          period: t(`resume.experiences.${i}.period`),
+          description: t(`resume.experiences.${i}.description`)
+        });
+      }
+      return experiencesArray;
+    });
+
+    const educations = computed(() => ([
+      {
+        id: 1,
+        degree: t('resume.educations.0.degree'),
+        institution: t('resume.educations.0.institution'),
+        period: t('resume.educations.0.period')
+      },
+    ]));
+
+    const skills = computed(() => {
+      const skillsCount = 4;
+      const skillsArray = [];
+      for (let i = 0; i < skillsCount; i++) {
+        const keywordsCount = 100;
+        const keywordsArray = [];
+        for (let j = 0; j < keywordsCount; j++) {
+          if (!te(`resume.skills.${i}.keywords.${j}`)) break;
+          keywordsArray.push(t(`resume.skills.${i}.keywords.${j}`));
         }
-      ],
-      educations: [
-        {
-          id: 1,
-          degree: 'Information Technology, Engineer in Networks and IT security',
-          institution: 'ISIMA',
-          period: '2006 - 2009'
+        skillsArray.push({
+          id: i + 1,
+          name: t(`resume.skills.${i}.name`),
+          keywords: keywordsArray
+        });
+      }
+      return skillsArray;
+    });
+
+    const projects = computed(() => {
+      const projectsCount = 7;
+      const projectsArray = [];
+      for (let i = 0; i < projectsCount; i++) {
+        const skillsCount = 100;
+        const skillsArray = [];
+        for (let j = 0; j < skillsCount; j++) {
+          if (!te(`resume.projects.${i}.skills.${j}`)) break;
+          skillsArray.push(t(`resume.projects.${i}.skills.${j}`));
         }
-      ],
-      skills: [
-        {
-          name: 'Certificates',
-          keywords: [
-            'Certified SAFe 5 Architect',
-            'TOGAF 9 Certified',
-            'PSM I'
-          ]
-        },
-        {
-          name: 'Methods',
-          keywords: [
-            'Scrum',
-            'Agility at scale (SAFe)',
-            'DevOps',
-            'Digital Transformation',
-            'Business Transformation'
-          ]
-        },
-        {
-          name: 'Architecture',
-          keywords: [
-            'Enterprise Architecture',
-            'Solution Architecture',
-            'Cloud & Serverless Architecture',
-            'Microservices & Headless architecture',
-            'Event driven architecture',
-            'IT industrialization / Automation',
-            'Frontend web technologies',
-            'Web application solutions',
-            'E-commerce solutions',
-            'CMS solutions'
-          ]
-        },
-        {
-          name: 'Web 3',
-          keywords: [
-            'Blockchain',
-            'Solidity',
-            'Typescript',
-            'Vue.js'
-          ]
+
+        const highlightsCount = 100;
+        const highlightsArray = [];
+        for (let j = 0; j < highlightsCount; j++) {
+          if (!te(`resume.projects.${i}.highlights.${j}`)) break;
+          highlightsArray.push(t(`resume.projects.${i}.highlights.${j}`));
         }
-      ],
-      projects: [
-        {
-          id: 1,
-          title: 'Architect : Invoice management',
-          company: 'SNCF',
-          skills: ['AWS', 'SAP'],
-          highlights: [
-            'Impact studies & technical design',
-            'Operational delivery coordination',
-            'Transformation consulting'
-          ]
-        },
-        {
-          id: 2,
-          title: 'Technical project manager : Products personalization',
-          company: 'LVMH',
-          skills: ['SFSC', 'SFCC', 'GCP', 'SAP', 'IOS'],
-          highlights: [
-            'Operational delivery coordination - 3 teams',
-            'Global architecture alignment & validation',
-            'Definition of architecture vision for future channels deployment'
-          ],
-        },
-        {
-          id: 3,
-          title: 'Architect : Ecommerce B2B B2C',
-          company: 'MOTUL',
-          skills: ['Azure', 'React', 'Algolia', 'API', 'CDP', 'PIM'],
-          highlights: [
-            'Consulting for digital IT global transformation architecture',
-            'Architecture coordination of MVP delivery'
-          ],
-        },
-        {
-          id: 4,
-          title: 'Architect : Scoping of digital replatforming',
-          company: 'LVMH',
-          skills: ['Azure', 'Vue.js', 'ATG', 'SFCC', 'AEM', 'Coremedia', 'Algolia'],
-          highlights: [
-          'Architecture definition for systems modernization related to Merchandising and Search. High level design of integration into the existing Louis Vuitton digital platform',
-          "Scoping work for the brand's complete digital commerce replatforming"
-          ],
-        },
-        {
-          id: 5,
-          title: 'Architect : Customer portal, replatforming IT',
-          company: 'Système U',
-          skills: ['GCP', 'Vue.js', 'AEM', 'CIAM'],
-          highlights: [
-          'Functional and Technical Architecture of customer portal journeys',
-          'Decoupled architecture strategy: API First, Micro-services, Micro-frontends',
-          'Coordination'
-          ],
-        },
-        {
-          id: 6,
-          title: 'Architect : E-commerce platform',
-          company: 'Hermès',
-          skills: ['AWS', 'Drupal', 'Magento', 'Angular', 'Typescript'],
-          highlights: [
-          'E-commerce platform program: Agile at scale, 10 scrum teams',
-          'Architecture coordination: Architectural roadmap construction, exploratory studies, project coordination; Program architecture vision and support of teams in the implementation of the objectives.',
-          'Delivery: Support of the program system team',
-          'Quality: Drive architecture for continuous improvement of project, tooling and process quality.',
-          'Cloudification: Transition from an on-premise architecture to a cloud architecture.'
-          ],
-        },
-        {
-          id: 7,
-          title: 'Solution Architect : Atlassian Collaborative Solutions',
-          company: 'Atlassian',
-          skills: ['Typescript', 'Vue.js', 'Java'],
-          highlights: [
-          'Global offer: Build an offer around Atlassian collaborative tools.',
-          'Transformation: Management of transformations and deployment of tools, training support.',
-          'Coordination of a development team focus on specific additional developments',
-          'As an agile program architect, I support teams toward commons practices and aligned vision.'
-          ],
-        }
-      ]
+
+        projectsArray.push({
+          id: i + 1,
+          title: t(`resume.projects.${i}.title`),
+          company: t(`resume.projects.${i}.company`),
+          skills: skillsArray,
+          highlights: highlightsArray
+        });
+      }
+      return projectsArray;
+    });
+
+    const description = computed(() => {
+
+      return t('resume.description')
+    }
+    );
+
+    return {
+      changeLanguage,
+      personalInfo,
+      experiences,
+      educations,
+      skills,
+      projects,
+      description,
+      titles
+    }
+
+  },
+  watch: {
+    lang(newLang) {
+      this.changeLanguage(newLang);
+    }
+  },
+  props: {
+    lang: {
+      type: String,
+      default: 'en'
     }
   },
   methods: {
     downloadPDF() {
       const element = document.getElementById('resume');
       const opt = {
-        margin:       1,
-        filename:     'resume.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2, windowWidth: 700 },
-        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        margin: 1,
+        filename: 'resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, windowWidth: 700 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
       };
       html2pdf().set(opt).from(element).save();
-    }
+    },
+
   }
 })
 </script>
 
 <style scoped>
-
 #resume {
   font-family: Arial, sans-serif;
   font-size: 0.9em;
@@ -314,23 +279,23 @@ header {
   margin-bottom: 20px;
 }
 
-.half{
+.project {
   width: 50%;
   margin: auto;
   margin-bottom: 15px;
 }
 
 @media (max-width: 700px) {
-  .half {
+  .project {
     width: 100%;
   }
 }
 
-.half p {
+.project p {
   margin: 10px;
 }
 
-.half ul li {
+.project ul li {
   margin-bottom: 0px;
 }
 
@@ -361,7 +326,8 @@ header .social-links .social-icon {
   vertical-align: middle;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: #333;
 }
 
@@ -392,7 +358,7 @@ ul li {
   margin: 5px;
 }
 
-.skills li{
+.skills li {
   font-size: 0.7em;
   border: 1px solid #B0B0B0;
   border-radius: 20px;
@@ -414,7 +380,7 @@ ul li {
   max-width: 900px;
 }
 
-.pdf-button {
+.button {
   border: none;
   border-radius: 20px;
   padding: 8px;
@@ -424,7 +390,7 @@ ul li {
   font-size: 0.8em;
 }
 
-.pdf-button:hover {
+.button:hover {
   background-color: #A0A0A0;
 }
 </style>
