@@ -9,9 +9,9 @@ export const resumeContent = {
                 languages: 'Languages',
             },
             personalInfo: {
-                title: 'Freelance Digital Web / Web3 Architect',
+                title: 'Freelance Digital Web / Web3 Architect - 13 years of experience',
             },
-            description: 'With 12 years of experience, I support technical teams in the seamless design and operational delivery of web projects integrated into IT systems. My expertise extends to driving these projects within complex programs. I have served as an architect and tech lead across various industries, including manufacturing, retail, and the luxury sector. As an Agile enthusiast, I focus on modern digital architectures. My approach involves designing systems and innovative solutions that empower teams to execute their strategies effectively.',
+            description: 'I support technical teams in the seamless design and operational delivery of web projects integrated into IT systems. My expertise extends to driving these projects within complex programs. I have served as an architect and tech lead across various industries, including manufacturing, retail, and the luxury sector. As an Agile enthusiast, I focus on modern digital architectures. My approach involves designing systems and innovative solutions that empower teams to execute their strategies effectively.',
             experiences: [
                 {
                     id: 1,
@@ -25,7 +25,7 @@ export const resumeContent = {
                     position: 'Consultant / Enterprise Architect',
                     company: 'Capgemini',
                     period: 'September 2015 - January 2024',
-                    description: 'I work to align architectural strategies with business objectives. As an agile architect, I also guide delivery teams in achieving these goals'
+                    description: 'Enterprise architect of COE Commerce for Capgemini France. I work to align architectural strategies with business objectives. As an agile architect, I also guide delivery teams in achieving these goals'
                 },
                 {
                     id: 3,
@@ -149,7 +149,7 @@ export const resumeContent = {
                     id: 6,
                     title: 'Architect : E-commerce platform',
                     company: 'Hermès',
-                    skills: ['AWS', 'Drupal', 'Magento', 'Angular', 'Typescript'],
+                    skills: ['AWS', 'Drupal', 'Magento', 'Akeneo', 'Angular', 'Typescript'],
                     highlights: [
                         'E-commerce platform program: Agile at scale, 10 scrum teams',
                         'Architecture coordination: Architectural roadmap construction, exploratory studies, project coordination; Program architecture vision and support of teams in the implementation of the objectives.',
@@ -176,7 +176,7 @@ export const resumeContent = {
     fr: {
         resume: {
             personalInfo: {
-                title: 'Architecte Web / Web3 Freelance',
+                title: 'Architecte Web / Web3 Freelance - 13 ans d\'expérience',
             },
             titles: {
                 experiences: 'Experiences',
@@ -199,7 +199,7 @@ export const resumeContent = {
                     position: 'Consultant / Architecte Enterprise',
                     company: 'Capgemini',
                     period: 'Sept 2015 - Jan 2024',
-                    description: "Alignement de l'architecture avec les objectifs business. En tant qu'architecte d'entreprise, je réalise des analyses et des plans pour aider les entreprises à atteindre leurs objectifs, tandis qu'en tant qu'architecte agile, je guide les équipes de delivery"
+                    description: "Architecte d'entreprise du COE Commerce pour Capgemini France. Alignement de l'architecture avec les objectifs business. En tant qu'architecte d'entreprise, je réalise des analyses et des plans pour aider les entreprises à atteindre leurs objectifs, tandis qu'en tant qu'architecte agile, je guide les équipes de delivery"
                 },
                 {
                     id: 3,
@@ -323,7 +323,7 @@ export const resumeContent = {
                     "id": 6,
                     "title": "Architecte : Plateforme E-commerce",
                     "company": "Hermès",
-                    "skills": ["AWS", "Drupal", "Magento", "Angular", "Typescript"],
+                    "skills": ["AWS", "Drupal", "Magento", 'Akeneo', "Angular", "Typescript"],
                     "highlights": [
                         "Programme de plateforme E-commerce : Agile à grande échelle, 10 équipes scrum",
                         "Coordination de l'architecture : Construction de la roadmap architecturale, études exploratoires, coordination de projet; Vision de l'architecture du programme et support des équipes dans la mise en œuvre des objectifs.",

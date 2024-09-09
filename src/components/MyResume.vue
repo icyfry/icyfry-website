@@ -116,7 +116,7 @@ export default defineComponent({
     const { t, te, locale } = useI18n();
 
     const changeLanguage = (language: string) => {
-      locale.value = language // Changez la langue ici
+      locale.value = language
       console.log('Language changed to', language)
     }
 
@@ -133,7 +133,7 @@ export default defineComponent({
       name: 'Jonathan Le Brun',
       title: t('resume.personalInfo.title'),
       contact: {
-        localisation: 'Nantes, France',
+        localisation: 'Lorient, France',
       },
       social: {
         linkedin: 'https://www.linkedin.com/in/jonathan-le-brun/',
@@ -195,14 +195,12 @@ export default defineComponent({
           if (!te(`resume.projects.${i}.skills.${j}`)) break;
           skillsArray.push(t(`resume.projects.${i}.skills.${j}`));
         }
-
         const highlightsCount = 100;
         const highlightsArray = [];
         for (let j = 0; j < highlightsCount; j++) {
           if (!te(`resume.projects.${i}.highlights.${j}`)) break;
           highlightsArray.push(t(`resume.projects.${i}.highlights.${j}`));
         }
-
         projectsArray.push({
           id: i + 1,
           title: t(`resume.projects.${i}.title`),
@@ -215,10 +213,8 @@ export default defineComponent({
     });
 
     const description = computed(() => {
-
       return t('resume.description')
-    }
-    );
+    });
 
     return {
       changeLanguage,
