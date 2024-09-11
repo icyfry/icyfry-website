@@ -13,13 +13,13 @@
           <p>{{ personalInfo.title }}</p>
           <p>{{ personalInfo.contact.localisation }}</p>
           <div class="social-links">
-            <a :href="personalInfo.social.linkedin" target="_blank">
+            <a :href="sanitizeUrl(personalInfo.social.linkedin)" target="_blank">
               <img src="/linkedin.png" alt="LinkedIn" class="social-icon">
             </a>
-            <a :href="personalInfo.social.malt" target="_blank">
+            <a :href="sanitizeUrl(personalInfo.social.malt)" target="_blank">
               <img src="/malt.png" alt="Malt" class="social-icon">
             </a>
-            <a :href="personalInfo.social.github" target="_blank">
+            <a :href="sanitizeUrl(personalInfo.social.github)" target="_blank">
               <img src="/github.png" alt="GitHub" class="social-icon">
             </a>
           </div>
@@ -120,6 +120,13 @@ export default defineComponent({
       console.log('Language changed to', language)
     }
 
+    const sanitizeUrl = (url: string) => {
+      if (url.startsWith('http://') || url.startsWith('https://')) {
+        return url;
+      }
+      return 'about:blank'; // Fallback to a safe URL
+    }
+
     const titles = computed(() => ({
       skills: t(`resume.titles.skills`),
       experiences: t(`resume.titles.experiences`),
@@ -218,6 +225,7 @@ export default defineComponent({
 
     return {
       changeLanguage,
+      sanitizeUrl,
       personalInfo,
       experiences,
       educations,

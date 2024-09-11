@@ -44,7 +44,7 @@ export default defineComponent({
   width: 100%;
   margin: 0px;
   padding-bottom: 0px;
-  background: linear-gradient(-45deg, #7fdbff, #3d9970, #ff851b, #ffdc00);
+  background-image: linear-gradient(-45deg, #7fdbff, #3d9970, #ff851b, #ffdc00);
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
 }
@@ -54,7 +54,7 @@ export default defineComponent({
   background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: center;
-  background: linear-gradient(-45deg, #949494, #363636, #c5c5c5, #6b6b6b);
+  background-image: linear-gradient(-45deg, #949494, #363636, #c5c5c5, #6b6b6b);
   background-size: 400% 400%;
 }
 
@@ -71,7 +71,7 @@ a:link {
 
 .home-head h1 {
   color: white;
-  font-family: Mansalva, Arial;
+  font-family: Mansalva, Arial, sans-serif;
   font-size: 55pt;
   text-shadow: black 0.1em 0.1em 0.2em;
   margin: 0px;
