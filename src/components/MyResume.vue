@@ -13,13 +13,13 @@
           <p>{{ personalInfo.title }}</p>
           <p>{{ personalInfo.contact.localisation }}</p>
           <div class="social-links">
-            <a :href="sanitizeUrl(personalInfo.social.linkedin)" target="_blank">
+            <a :href="sanitizeUrl(personalInfo.social.linkedin)" target="_blank" rel="noopener">
               <img src="/linkedin.png" alt="LinkedIn" class="social-icon">
             </a>
-            <a :href="sanitizeUrl(personalInfo.social.malt)" target="_blank">
+            <a :href="sanitizeUrl(personalInfo.social.malt)" target="_blank" rel="noopener">
               <img src="/malt.png" alt="Malt" class="social-icon">
             </a>
-            <a :href="sanitizeUrl(personalInfo.social.github)" target="_blank">
+            <a :href="sanitizeUrl(personalInfo.social.github)" target="_blank" rel="noopener">
               <img src="/github.png" alt="GitHub" class="social-icon">
             </a>
           </div>

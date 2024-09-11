@@ -6,7 +6,7 @@ on:
       - develop
 
 jobs:
-  s3-deploy:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
     
@@ -31,6 +31,12 @@ jobs:
 
     - name: Building the project
       run: pnpm run build:staging
+
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         
     - name: Deploy static site to S3 bucket
       run: aws s3 sync ./dist/ s3://icyfry-website/staging --delete
