@@ -13,6 +13,9 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/me',
     name: 'resume',
+    meta: {
+      title: 'Jonathan Le Brun',
+    },
     component: MeView,
     props: true
   },
@@ -28,5 +31,10 @@ const router = createRouter({
   history: createWebHistory(),
   routes
 })
+
+const DEFAULT_TITLE: string = "icyfry.bzh";
+router.beforeEach((to) => {
+  document.title = (to.meta.title || DEFAULT_TITLE) as string;
+});
 
 export default router
