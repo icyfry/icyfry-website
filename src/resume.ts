@@ -15,7 +15,7 @@ export const resumeContent = {
             experiences: [
                 {
                     id: 1,
-                    position: 'Digital & Web3 Architect',
+                    position: 'Digital Architect',
                     company: 'Freelance',
                     period: 'January 2024 - Now',
                     description: 'I support technical teams in the design and operational delivery of web projects'
@@ -45,6 +45,21 @@ export const resumeContent = {
             ],
             skills: [
                 {
+                    name: 'Architecture',
+                    keywords: [
+                        'Enterprise Architecture',
+                        'Solution Architecture',
+                        'Cloud & Serverless Architecture',
+                        'Microservices & Headless architecture',
+                        'Event driven architecture',
+                        'IT industrialization CI/CD',
+                        'DevOps',
+                        'Frontend web technologies',
+                        'Web application solutions',
+                        'E-commerce solutions',
+                        'CMS solutions'
+                    ]
+                },                {
                     name: 'Certificates',
                     keywords: [
                         'Certified SAFe 5 Architect',
@@ -60,22 +75,6 @@ export const resumeContent = {
                         'DevOps',
                         'Digital Transformation',
                         'Business Transformation'
-                    ]
-                },
-                {
-                    name: 'Architecture',
-                    keywords: [
-                        'Enterprise Architecture',
-                        'Solution Architecture',
-                        'Cloud & Serverless Architecture',
-                        'Microservices & Headless architecture',
-                        'Event driven architecture',
-                        'IT industrialization CI/CD',
-                        'DevOps',
-                        'Frontend web technologies',
-                        'Web application solutions',
-                        'E-commerce solutions',
-                        'CMS solutions'
                     ]
                 },
                 {
@@ -189,7 +188,7 @@ export const resumeContent = {
             experiences: [
                 {
                     id: 1,
-                    position: 'Digital & Web3 Architect',
+                    position: 'Digital Architect',
                     company: 'Freelance',
                     period: 'Jan 2024',
                     description: "J'accompagne les équipes techniques dans la conception et la mise en oeuvre opérationnelle de projets web"
@@ -219,6 +218,22 @@ export const resumeContent = {
             ],
             skills: [
                 {
+                    name: 'Architecture',
+                    keywords: [
+                        'Enterprise Architecture',
+                        'Solution Architecture',
+                        'Cloud & Serverless Architecture',
+                        'Microservices & Headless architecture',
+                        'Event driven architecture',
+                        'IT industrialization CI/CD',
+                        'DevOps',
+                        'Frontend web technologies',
+                        'Web application solutions',
+                        'E-commerce solutions',
+                        'CMS solutions'
+                    ]
+                },
+                {
                     name: 'Certifications',
                     keywords: [
                         'Certified SAFe 5 Architect',
@@ -234,22 +249,6 @@ export const resumeContent = {
                         'DevOps',
                         'Digital Transformation',
                         'Business Transformation'
-                    ]
-                },
-                {
-                    name: 'Architecture',
-                    keywords: [
-                        'Enterprise Architecture',
-                        'Solution Architecture',
-                        'Cloud & Serverless Architecture',
-                        'Microservices & Headless architecture',
-                        'Event driven architecture',
-                        'IT industrialization CI/CD',
-                        'DevOps',
-                        'Frontend web technologies',
-                        'Web application solutions',
-                        'E-commerce solutions',
-                        'CMS solutions'
                     ]
                 },
                 {
