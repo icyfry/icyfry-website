@@ -9,7 +9,7 @@ export const resumeContent = {
                 languages: 'Languages',
             },
             personalInfo: {
-                title: 'Freelance Digital Web / Web3 Architect - 13 years of experience',
+                title: 'Freelance Digital Web Architect - 13 years of experience',
             },
             description: 'I support technical teams in the seamless design and operational delivery of web projects integrated into IT systems. My expertise extends to driving these projects within complex programs. I have served as an architect and tech lead across various industries, including manufacturing, retail, and the luxury sector. As an Agile enthusiast, I focus on modern digital architectures. My approach involves designing systems and innovative solutions that empower teams to execute their strategies effectively.',
             experiences: [
@@ -175,7 +175,7 @@ export const resumeContent = {
     fr: {
         resume: {
             personalInfo: {
-                title: 'Architecte Web / Web3 Freelance - 13 ans d\'expérience',
+                title: 'Architecte Web Freelance - 13 ans d\'expérience',
             },
             titles: {
                 experiences: 'Experiences',
