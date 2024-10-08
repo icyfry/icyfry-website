@@ -34,7 +34,7 @@
     </section>
 
     <section>
-      <h2>{{ titles.skills }}</h2>
+      <h2 class="pdf-page-break">{{ titles.skills }}</h2>
       <ul>
         <li v-for="skill in skills">
           <h3>{{ skill.name }}</h3>
@@ -48,7 +48,7 @@
     </section>
 
     <section>
-      <h2>{{ titles.experiences }}</h2>
+      <h2 class="pdf-page-break">{{ titles.experiences }}</h2>
       <ul>
         <li v-for="experience in experiences" :key="experience.id">
           <h3>{{ experience.position }} - {{ experience.company }}</h3>
@@ -59,7 +59,7 @@
     </section>
 
     <section>
-      <h2>{{ titles.projects }}</h2>
+      <h2 class="pdf-page-break">{{ titles.projects }}</h2>
       <ul>
         <li class="project" v-for="project in projects" :key="project.id">
           <h3>{{ project.title }} - {{ project.company }}</h3>
@@ -75,14 +75,15 @@
           </ul>
         </li>
       </ul>
+      <br/>
     </section>
-
+    <br/>
     <section>
       <h2>{{ titles.education }}</h2>
       <ul>
         <li v-for="education in educations" :key="education.id">
-          <h3>{{ education.degree }} - {{ education.institution }}</h3>
-          <p>{{ education.period }}</p>
+          <h3>{{ education.degree }}</h3>
+          <p>{{ education.institution }}, {{ education.period }}</p>
         </li>
       </ul>
     </section>
@@ -338,6 +339,9 @@ h2 {
 h2 {
   border-bottom: 1px solid black;
   width: 100%;
+}
+
+.pdf-page-break{
   page-break-before: always;
 }
 
