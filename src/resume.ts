@@ -11,14 +11,14 @@ export const resumeContent = {
             personalInfo: {
                 title: 'Freelance Digital Web Architect - 13 years of experience',
             },
-            description: 'I support technical teams in the seamless design and operational delivery of web projects integrated into IT systems. My expertise extends to driving these projects within complex programs. I have served as an architect and tech lead across various industries, including manufacturing, retail, and the luxury sector. As an Agile enthusiast, I focus on modern digital architectures. My approach involves designing systems and innovative solutions that empower teams to execute their strategies effectively.',
+            description: 'I support teams in the design and integration of web architectures within enterprise information systems. My expertise focuses on designing modern, agile IT architectures and ensuring their effective integration into complex projects. I have experience as a technical architect across various sectors, including industry, retail, and luxury. My approach combines strategic design and technical execution to deliver robust and scalable solutions',
             experiences: [
                 {
                     id: 1,
                     position: 'Digital Architect',
                     company: 'Freelance',
                     period: 'January 2024 - Now',
-                    description: 'I support technical teams in the design and operational delivery of web projects'
+                    description: 'I support teams in the design and integration of web architectures within enterprise information systems'
                 },
                 {
                     id: 2,
@@ -98,7 +98,7 @@ export const resumeContent = {
                     skills: ['AWS', 'SAP'],
                     highlights: [
                         'Impact studies & technical design',
-                        'Operational delivery coordination',
+                        'Operational delivery technical coordination',
                         'Transformation consulting'
                     ]
                 },
@@ -184,14 +184,14 @@ export const resumeContent = {
                 projects: 'Projets',
                 languages: 'Langues',
             },
-            description: "J'accompagne les équipes techniques dans le design et le delivery opérationnel de projets web intégrés aux systèmes d'information d'entreprises. J'apporte également une expertise pour coordonner efficacement ces projets au sein de programmes complexes. J'ai de l'expérience en tant qu'architecte technique dans de nombreux secteurs, notamment l'industrie, le retail et le secteur du luxe. Passionné d'Agile, je design des architectures IT modernes. Ma démarche consiste à concevoir des systèmes et des solutions innovantes qui permettent aux équipes d'atteindre efficacement leurs objectifs.",
+            description: "J'accompagne les équipes dans la conception et l'intégration d'architectures web au sein des systèmes d'information des entreprises. Mon expertise se concentre sur le design d'architectures IT modernes, agiles ainsi que sur leur intégration efficace dans des projets complexes. J'ai de l'expérience en tant qu'architecte technique dans de nombreux secteurs, notamment l'industrie, le retail et le secteur du luxe. Mon approche allie design stratégique et exécution technique pour garantir des solutions robustes et évolutives",
             experiences: [
                 {
                     id: 1,
                     position: 'Digital Architect',
                     company: 'Freelance',
                     period: 'Jan 2024',
-                    description: "J'accompagne les équipes techniques dans la conception et la mise en oeuvre opérationnelle de projets web"
+                    description: "J'accompagne les équipes dans la conception et l'intégration d'architectures web au sein des systèmes d'information des entreprises"
                 },
                 {
                     id: 2,
@@ -271,7 +271,7 @@ export const resumeContent = {
                     "company": "SNCF",
                     "skills": ["AWS", "SAP"],
                     "highlights": [
-                        "Études d'impact et conception technique",
+                        "Études d'impacts et conception",
                         "Coordination de la livraison opérationnelle",
                         "Consulting en transformation"
                     ]
@@ -284,7 +284,7 @@ export const resumeContent = {
                     "highlights": [
                         "Coordination de la livraison opérationnelle - 3 équipes",
                         "Alignement et validation de l'architecture globale",
-                        "Définition de la vision architecturale pour le déploiement des canaux futurs"
+                        "Définition de la vision architecturale pour le déploiement de canaux"
                     ]
                 },
                 {
@@ -299,17 +299,17 @@ export const resumeContent = {
                 },
                 {
                     "id": 4,
-                    "title": "Architecte : Définition du périmètre de la replatformisation digitale",
+                    "title": "Architecte : Définition du périmètre du replatforming digital",
                     "company": "LVMH",
                     "skills": ["Azure", "Vue.js", "ATG", "SFCC", "AEM", "Coremedia", "Algolia"],
                     "highlights": [
                         "Définition de l'architecture pour la modernisation des systèmes liés au Merchandising et à la recherche. Conception de haut niveau de l'intégration dans la plateforme digitale existante de Louis Vuitton",
-                        "Définition du périmètre de la replatformisation complète du commerce digital de la marque"
+                        "Aide à la définition du périmètre du replatforming du commerce digital de la marque"
                     ]
                 },
                 {
                     "id": 5,
-                    "title": "Architecte : Portail client, replatformisation IT",
+                    "title": "Architecte : Portail client, replatforming IT",
                     "company": "Système U",
                     "skills": ["GCP", "Vue.js", "AEM", "CIAM"],
                     "highlights": [
